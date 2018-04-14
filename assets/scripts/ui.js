@@ -98,7 +98,7 @@ const createFailed = function (data) {
 
 const showAllWorkoutsSuccess = function (data) {
   console.log(data)
-  const showWorkoutsHtml = showWorkouts({workouts: data.workout})
+  const showWorkoutsHtml = showWorkouts({workouts: data.workouts})
   $('.content').html(showWorkoutsHtml)
 }
 
