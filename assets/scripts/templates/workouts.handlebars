@@ -1,0 +1,23 @@
+{{#each workouts as |workout|}}
+
+<ul>
+  <h1 data-id="{{workout.id}}">
+     <small class="main-title">
+       Exercise:{{workout.exercise}}
+     </small>
+   </h1>
+    {{#if workout.title}}
+      <li class="id">ID:{{workout.id}}</li>
+      <li class="director">Reps:{{workout.reps}}</li>
+      <li class="actor">Sets:{{workout.sets}}</li>
+    {{else}}
+      Nothing provided
+    {{/if}}<br>
+    <button class="workout-delete" data-id={{workout.id}}>
+      Remove
+    </button>
+</ul>
+
+  {{/each}}
+
+</ul>

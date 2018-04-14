@@ -5,7 +5,12 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+// const setAPIOrigin = require('../../lib/set-api-origin')
+// const config = require('./config')
+// const heroku = require('./config')
+const authEvents = require('./events')
 
 $(() => {
-  // your JS code goes here
+  authEvents.addHandlers()
+  // heroku.apiUrl()
 })
