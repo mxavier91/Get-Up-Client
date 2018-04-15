@@ -127,12 +127,22 @@ const addHandlers = () => {
   $('#create').on('submit', onCreate)
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdateMovie)
-  // $('#delete').on('submit', onDeleteMovie)
   $('#content').on('click', '.workout-delete', onDeleteWorkout)
   $('#all-users').on('click', onShowAllUsers)
+  $('a.show-form').on('click', function () {
+    $('#sign-up').toggle()
+  })
+  $('a.show-pass').on('click', function () {
+    $('#change-password').toggle()
+  })
+  $('a.show-in').on('click', function () {
+    $('#sign-in').toggle()
+  })
+
   // $('#moreContent').on('click', '.add-movie', onAddMovie)
   // $('#movieContent').on('click', '.link', onShowAllUsersMovies)
   // $('#moreContent').data('key', 'movie')
+  // $('#delete').on('submit', onDeleteMovie)
 }
 
 module.exports = {
