@@ -1,0 +1,22 @@
+{{#each users as |user|}}
+{{#each workouts as |workout|}}
+
+<h1 data-id="{{user.id}}">
+  <small>
+    <button type="button" class="link">User:{{user.username}}</button>
+  </small>
+</h1>
+
+<ul>
+{{#if user.id}}
+  <li class="main-title">Exercise: {{workout.exercise}}</li>
+  <li class="id">ID: {{workout.id}}</li>
+  <li class="director">Reps: {{workout.reps}}</li>
+  <li class="actor">Sets: {{workout.sets}}</li>
+{{else}}
+  Nothing provided
+{{/if}}<br>
+</ul>
+
+{{/each}}
+{{/each}}

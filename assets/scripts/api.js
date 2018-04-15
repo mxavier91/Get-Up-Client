@@ -80,18 +80,16 @@ const updateWorkout = function (data) {
   })
 }
 
-/*
-const deleteMovie = function (id) {
-  return $.ajax({
-    url: config.apiUrl + '/movies/' + id,
-    method: 'DELETE',
-    headers: {
-      ContentType: 'application/json',
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-*/
+// const deleteWorkout = function (id) {
+//   return $.ajax({
+//     url: config.apiUrl + '/movies/' + id,
+//     method: 'DELETE',
+//     headers: {
+//       ContentType: 'application/json',
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 const deleteWorkout = function (id) {
   return $.ajax({
@@ -103,17 +101,17 @@ const deleteWorkout = function (id) {
   })
 }
 
-// const getAllUsers = function (data) {
-//   console.log(data)
-//   return $.ajax({
-//     url: config.apiUrl + '/users',
-//     method: 'GET',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const getAllUsers = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/users',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 //
 // const addMovie = function (data) {
 //   console.log(data)
@@ -148,8 +146,8 @@ module.exports = {
   createWorkout,
   showAllWorkouts,
   updateWorkout,
-  deleteWorkout
-  // getAllUsers,
+  deleteWorkout,
+  getAllUsers
   // addMovie,
   // getAllMovies
 }

@@ -1,6 +1,6 @@
 const store = require('./store')
 const showWorkouts = require('./templates/workouts.handlebars')
-// const showUsersMovies = require('./templates/users-movie-listings.handlebars')
+const showUsersWorkouts = require('./templates/users-workout-listings.handlebars')
 
 const signUpSuccess = function (data) {
   $('#message').text('"You Had Me at Hello"-Sign up Success')
@@ -102,13 +102,13 @@ const showAllWorkoutsSuccess = function (data) {
   $('.content').html(showWorkoutsHtml)
 }
 
-// const allUsersSuccess = function (data) {
-//   console.log(data)
-//   const showUsersMoviesHtml = showUsersMovies({users: data.users})
-//   $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
-//   $('#message').css('background-color', 'green')
-//   $('#moreContent').html(showUsersMoviesHtml)
-// }
+const allUsersSuccess = function (data) {
+  console.log(data)
+  const showUsersWorkoutsHtml = showUsersWorkouts({users: data.users})
+  $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
+  $('#message').css('background-color', 'green')
+  $('#moreContent').html(showUsersWorkoutsHtml)
+}
 
 /*
 const showAllMoviesFailed = function (data) {
@@ -172,7 +172,7 @@ module.exports = {
   createSuccessful,
   createFailed,
   showAllWorkoutsSuccess,
-  // allUsersSuccess,
+  allUsersSuccess,
   updateSuccess,
   updateFailed,
   deleteSuccessful,

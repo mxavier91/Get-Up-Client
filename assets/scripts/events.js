@@ -72,7 +72,7 @@ const onDeleteMovie = function (event) {
 }
 */
 
-const onDeleteMovie = (event) => {
+const onDeleteWorkout = (event) => {
   event.preventDefault()
   const id = event.target.dataset.id
   api.deleteWorkout(id)
@@ -81,14 +81,14 @@ const onDeleteMovie = (event) => {
     .catch(ui.deleteFailed)
 }
 
-// const onShowAllUsers = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.getAllUsers(data)
-//     .then(ui.allUsersSuccess)
-//     .catch(ui.allUserFailure)
-//   $('#moreContent').toggle()
-// }
+const onShowAllUsers = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.getAllUsers(data)
+    .then(ui.allUsersSuccess)
+    .catch(ui.allUserFailure)
+  // $('#moreContent').toggle()
+}
 
 // const onAddMovie = function (event) {
 //   console.log(event.target)
@@ -128,8 +128,8 @@ const addHandlers = () => {
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdateMovie)
   // $('#delete').on('submit', onDeleteMovie)
-  $('#content').on('click', '.movie-delete', onDeleteMovie)
-  // $('#all-users').on('click', onShowAllUsers)
+  $('#content').on('click', '.workout-delete', onDeleteWorkout)
+  $('#all-users').on('click', onShowAllUsers)
   // $('#moreContent').on('click', '.add-movie', onAddMovie)
   // $('#movieContent').on('click', '.link', onShowAllUsersMovies)
   // $('#moreContent').data('key', 'movie')
