@@ -1,11 +1,15 @@
 {{#each users as |user|}}
-{{#each workouts as |workout|}}
+
+
+
 
 <h1 data-id="{{user.id}}">
   <small>
     <button type="button" class="link">User:{{user.username}}</button>
   </small>
 </h1>
+
+{{#each workouts as |workout|}}
 
 <ul>
 {{#if user.id}}

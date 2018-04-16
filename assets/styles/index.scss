@@ -1,6 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  // background-image: url("https://i.imgur.com/CWqIyfM.jpg");
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
+  // background-attachment: fixed;
+  background-color: gray;
+  padding-top: 15%;
+}
+
+.set-tracker {
+  display: none;
+}
 
 .sign-up{
   display: none;
@@ -32,4 +46,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .all-users{
   display: none;
+}
+
+// .navbar {
+//    background-color: transparent;
+//    background: transparent;
+//    border-color: transparent;
+// }
+#showPass{
+  display: none;
+}
+
+#sign-out{
+  display: none;
+}
+
+.navbar-default {
 }

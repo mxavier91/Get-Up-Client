@@ -90,6 +90,12 @@ const onShowAllUsers = function (event) {
   // $('#moreContent').toggle()
 }
 
+const onTrackSet = function (event) {
+  event.preventDefault()
+  $('#message').text('Great Job. If you a easy time with it, wait 30 seconds. If not wait for a minute')
+  $('message').css('background-color', 'blue')
+}
+
 // const onAddMovie = function (event) {
 //   console.log(event.target)
 //   event.preventDefault()
@@ -123,7 +129,7 @@ const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#create').on('submit', onCreate)
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdateMovie)
@@ -138,6 +144,7 @@ const addHandlers = () => {
   $('a.show-in').on('click', function () {
     $('#sign-in').toggle()
   })
+  $('.setTrackerButtonOne').on('click', onTrackSet)
 
   // $('#moreContent').on('click', '.add-movie', onAddMovie)
   // $('#movieContent').on('click', '.link', onShowAllUsersMovies)

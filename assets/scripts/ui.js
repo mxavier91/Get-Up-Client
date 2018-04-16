@@ -8,7 +8,11 @@ const signUpSuccess = function (data) {
   $('#email-field').val('')
   $('#password-field').val('')
   $('#password-conformation-field').val('')
+  $('#first-name-field').val('')
+  $('#last-name-field').val('')
+  $('#username-field').val('')
   $('#sign-up').hide()
+  $('#sign-in').show()
 }
 
 const signUpFailure = function (error) {
@@ -25,8 +29,8 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('#signInEmail').val('')
   $('#signInPassword').val('')
-  $('#change-password').show()
-  $('#sign-out').show()
+  $('#change-password').hide()
+  $('#sign-out').hide()
   $('#create').show()
   $('#showAll').show()
   $('#update').show()
@@ -34,6 +38,10 @@ const signInSuccess = function (data) {
   $('#all-users').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('.show-form').hide()
+  $('.show-in').hide()
+  $('#showPass').show()
+  $('#sign-out').show()
   store.user = data.user
 }
 
@@ -69,8 +77,13 @@ const signOutSuccess = function () {
   $('#update').hide()
   $('#delete').hide()
   $('#content').hide()
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('.show-form').show()
+  $('.show-in').show()
+  $('#showPass').hide()
+  $('#all-users').hide()
+  $('#setTracker').hide()
 }
 
 const signOutFailure = function () {
@@ -85,6 +98,11 @@ const createSuccessful = function (data) {
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
   $('#newSetsField').val('')
+  $('#setTracker').show()
+  $('#create').hide()
+  $('#showAll').hide()
+  $('#update').hide()
+  $('#all-users').hide()
   store.workout = data.workout
 }
 
@@ -147,6 +165,11 @@ const deleteFailed = function () {
   $('#message').css('background-color', 'red')
 }
 
+const setCompletion = function () {
+  $('#message').text('Great Job. If you a easy time with it, wait 30 seconds. If not wait for a minute')
+  $('message').css('background-color', 'blue')
+}
+
 // const joinSuccessful = function (data) {
 //   console.log(data)
 //   $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
@@ -176,7 +199,8 @@ module.exports = {
   updateSuccess,
   updateFailed,
   deleteSuccessful,
-  deleteFailed
+  deleteFailed,
+  setCompletion
   // joinSuccessful,
   // joinFailed
 }
