@@ -110,6 +110,13 @@ const onTrackSet = function (event) {
   setInterval(timeIt, 1000)
 }
 
+const onSets = function (event) {
+  const data = getFormFields(event.target)
+  for (let i = 0; i < data.sets; i++) {
+    $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
+  }
+}
+
 // const onAddMovie = function (event) {
 //   console.log(event.target)
 //   event.preventDefault()
@@ -159,21 +166,22 @@ const addHandlers = () => {
     $('#sign-in').toggle()
   })
   $('.setTracker').on('click', onTrackSet)
-  $('#buttonOne').on('click', onTrackSet, function () {
-    $('#buttonOne').hide()
-  })
-  $('#buttonTwo').on('click', onTrackSet, function () {
-    $('#buttonTwo').hide()
-  })
-  $('#buttonThree').on('click', onTrackSet, function () {
-    $('#buttonThree').hide()
-  })
-  $('#buttonFour').on('click', onTrackSet, function () {
-    $('#buttonFour').hide()
-  })
-  $('#buttonFive').on('click', onTrackSet, function () {
-    $('#buttonFive').hide()
-  })
+  $('.setTracker').on('click', onSets)
+  // $('#buttonOne').on('click', onTrackSet, function () {
+  //   $('#buttonOne').hide()
+  // })
+  // $('#buttonTwo').on('click', onTrackSet, function () {
+  //   $('#buttonTwo').hide()
+  // })
+  // $('#buttonThree').on('click', onTrackSet, function () {
+  //   $('#buttonThree').hide()
+  // })
+  // $('#buttonFour').on('click', onTrackSet, function () {
+  //   $('#buttonFour').hide()
+  // })
+  // $('#buttonFive').on('click', onTrackSet, function () {
+  //   $('#buttonFive').hide()
+  // })
 
   // $('#moreContent').on('click', '.add-movie', onAddMovie)
   // $('#movieContent').on('click', '.link', onShowAllUsersMovies)
