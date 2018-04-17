@@ -93,16 +93,18 @@ const onShowAllUsers = function (event) {
 const onTrackSet = function (event) {
   event.preventDefault()
   $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
-  $('#message').css('background-color', 'blue')
-  $('#message').hide(5000)
+  $('#message').css('background-color', 'green')
+  // $('#message').hide(5000)
   let counter = 0
   const timeIt = function () {
     counter++
     $('#timer').html(counter)
-    if (counter === 30) {
-      console.log('Thirty!!!!!')
-    } else if (counter === 60) {
-      console.log('ONE MINTUE!!!!!')
+    if (counter === 10) {
+      $('#message').text('Get back to work, or wait 30 more secs')
+      $('#message').css('background-color', 'green')
+    } else if (counter === 15) {
+      $('#message').text('Time to Work')
+      $('#message').css('background-color', 'green')
     }
   }
   setInterval(timeIt, 1000)
