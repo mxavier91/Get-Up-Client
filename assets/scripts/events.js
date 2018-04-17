@@ -26,7 +26,7 @@ const onChangePassword = function (event) {
     .catch(ui.changeFailure)
 }
 
-const onSignOut = function () {
+const onSignOut = function() {
   event.preventDefault()
   const data = getFormFields(this)
   api.signOut(data)
@@ -46,8 +46,8 @@ const onShowAll = function (event) {
   event.preventDefault()
   api.showAllWorkouts()
     .then(ui.showAllWorkoutsSuccess)
-    // .catch(ui.showAllMoviesFailed)
-  // $('#content').toggle()
+  // .catch(ui.showAllMoviesFailed)
+  $('#content').toggle()
 }
 
 const onUpdateMovie = function (event) {
@@ -87,13 +87,25 @@ const onShowAllUsers = function (event) {
   api.getAllUsers(data)
     .then(ui.allUsersSuccess)
     .catch(ui.allUserFailure)
-  // $('#moreContent').toggle()
+  $('#moreContent').toggle()
 }
 
 const onTrackSet = function (event) {
   event.preventDefault()
-  $('#message').text('Great Job. If you a easy time with it, wait 30 seconds. If not wait for a minute')
-  $('message').css('background-color', 'blue')
+  $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
+  $('#message').css('background-color', 'blue')
+  $('#message').hide(5000)
+  let counter = 0
+  const timeIt = function () {
+    counter++
+    $('#timer').html(counter)
+    if (counter === 30) {
+      console.log('Thirty!!!!!')
+    } else if (counter === 60) {
+      console.log('ONE MINTUE!!!!!')
+    }
+  }
+  setInterval(timeIt, 1000)
 }
 
 // const onAddMovie = function (event) {

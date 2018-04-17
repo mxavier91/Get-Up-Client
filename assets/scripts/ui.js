@@ -165,11 +165,6 @@ const deleteFailed = function () {
   $('#message').css('background-color', 'red')
 }
 
-const setCompletion = function () {
-  $('#message').text('Great Job. If you a easy time with it, wait 30 seconds. If not wait for a minute')
-  $('message').css('background-color', 'blue')
-}
-
 // const joinSuccessful = function (data) {
 //   console.log(data)
 //   $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
@@ -199,8 +194,7 @@ module.exports = {
   updateSuccess,
   updateFailed,
   deleteSuccessful,
-  deleteFailed,
-  setCompletion
+  deleteFailed
   // joinSuccessful,
   // joinFailed
 }

@@ -17,10 +17,10 @@
   <!-- <h1>Browser Template</h1> -->
 
   <p id="message"></p>
-<!--Nav Bar Starts-->
+  <!--Nav Bar Starts-->
   <nav class="navbar navbar-default navbar-fixed-top the-bar">
     <div class="container-fluid">
-        <div class="navbar-header">
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -39,16 +39,14 @@
       </div>
     </div>
   </nav>
-      <!--Nav Bar Ends-->
+  <!--Nav Bar Ends-->
 
 
 
 
 
 
-
-
-
+  <p id="timer" class="timer">0</p>
 
 
 
@@ -59,7 +57,7 @@
   </form>
 
   <div id="moreContent" class="moreContent">
-    </div>
+  </div>
 
   <form id="sign-up" class="border sign-up">
     <fieldset>
@@ -107,8 +105,8 @@
       <legend class="creation">Create Workout</legend>
       <input id="createField" type="submit" value="Create"><br>
       <input type="text" name="workout[exercise]" id="newExerciseField" placeholder="Exercise"><br>
-      <input type="text" name="workout[reps]" id="newRepsField" placeholder="Reps"><br>
-      <input type="text" name="workout[sets]" id="newSetsField" placeholder="Sets"><br>
+      <input type="number" name="workout[reps]" id="newRepsField" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" id="newSetsField" placeholder="Sets"><br>
     </fieldset>
   </form>
 
@@ -138,8 +136,8 @@
       <input id="updateField" type="submit" value="Update Movie"><br>
       <input type="text" name="workout[id]" id="workout-id-update" placeholder="Workout ID"><br>
       <input type="text" name="workout[exercise]" id="updateExercise" placeholder="Exercise"><br>
-      <input type="text" name="workout[reps]" id="updateReps" placeholder="Reps"><br>
-      <input type="text" name="workout[sets]" id="updateSets" placeholder="Sets"><br>
+      <input type="number" name="workout[reps]" id="updateReps" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" id="updateSets" placeholder="Sets"><br>
     </fieldset>
   </form>
 
