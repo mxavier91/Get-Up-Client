@@ -164,6 +164,9 @@ const deleteFailed = function () {
   $('#message').text('Hold up one sec, Failed to Delete')
   $('#message').css('background-color', 'red')
 }
+const buttonOneSuccess = function () {
+  $('#buttonOne').hide()
+}
 
 // const joinSuccessful = function (data) {
 //   console.log(data)
@@ -194,7 +197,8 @@ module.exports = {
   updateSuccess,
   updateFailed,
   deleteSuccessful,
-  deleteFailed
+  deleteFailed,
+  buttonOneSuccess
   // joinSuccessful,
   // joinFailed
 }

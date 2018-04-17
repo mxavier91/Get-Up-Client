@@ -158,7 +158,22 @@ const addHandlers = () => {
   $('a.show-in').on('click', function () {
     $('#sign-in').toggle()
   })
-  $('.setTrackerButtonOne').on('click', onTrackSet)
+  $('.setTracker').on('click', onTrackSet)
+  $('#buttonOne').on('click', onTrackSet, function () {
+    $('#buttonOne').hide()
+  })
+  $('#buttonTwo').on('click', onTrackSet, function () {
+    $('#buttonTwo').hide()
+  })
+  $('#buttonThree').on('click', onTrackSet, function () {
+    $('#buttonThree').hide()
+  })
+  $('#buttonFour').on('click', onTrackSet, function () {
+    $('#buttonFour').hide()
+  })
+  $('#buttonFive').on('click', onTrackSet, function () {
+    $('#buttonFive').hide()
+  })
 
   // $('#moreContent').on('click', '.add-movie', onAddMovie)
   // $('#movieContent').on('click', '.link', onShowAllUsersMovies)
