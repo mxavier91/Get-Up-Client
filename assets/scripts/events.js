@@ -47,7 +47,7 @@ const onShowAll = function (event) {
   api.showAllWorkouts()
     .then(ui.showAllWorkoutsSuccess)
   // .catch(ui.showAllMoviesFailed)
-  $('#content').toggle()
+  // $('#content').toggle()
 }
 
 const onUpdateMovie = function (event) {
@@ -82,6 +82,8 @@ const onDeleteWorkout = (event) => {
 }
 
 const onShowAllUsers = function (event) {
+  console.log(event.target)
+  console.log(event)
   event.preventDefault()
   const data = getFormFields(event.target)
   api.getAllUsers(data)

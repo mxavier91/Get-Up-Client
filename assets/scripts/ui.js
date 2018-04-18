@@ -1,6 +1,7 @@
 const store = require('./store')
 const showWorkouts = require('./templates/workouts.handlebars')
 const showUsersWorkouts = require('./templates/users-workout-listings.handlebars')
+const Timer = require('../../node_modules/easytimer.js/dist/easytimer.min.js')
 
 const signUpSuccess = function (data) {
   $('#message').text('"You Had Me at Hello"-Sign up Success')
@@ -93,8 +94,6 @@ const signOutFailure = function () {
 
 const createSuccessful = function (data) {
   console.log(data)
-  // $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
-  // $('#message').css('background-color', 'green')
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
   $('#newSetsField').val('')
@@ -103,26 +102,38 @@ const createSuccessful = function (data) {
   $('#update').hide()
   $('#all-users').hide()
   for (let i = 0; i < data.workout.sets; i++) {
-    $('#button').append(`<button class="setTracker" id="set-${i}">Set</button>`)
-    $(`#set-${i}`).on('click')
+    $('#button').append(`<button class="resetButton" id="set-${i}">Set</button>`)
   }
-  $('.setTracker').on('click', function () {
-    $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
-    $('#message').css('background-color', 'green')
-    let counter = 0
-    const timeIt = function () {
-      counter++
-      $('#timer').html(counter)
-      if (counter === 10) {
-        $('#message').text('Get back to work, or wait 30 more secs')
-        $('#message').css('background-color', 'green')
-      } else if (counter === 15) {
-        $('#message').text('Time to Work')
-        $('#message').css('background-color', 'green')
-      }
+  const timer = new Timer()
+  $('#button').on('click', function () {
+    timer.reset()
+    $(event.target).remove()
+    if ($(this).children().length === 0) {
+      $('#change-password').hide()
+      $('#sign-out').hide()
+      $('#create').show()
+      $('#showAll').show()
+      $('#update').show()
+      $('#delete').show()
+      $('#all-users').show()
+      $('#sign-up').hide()
+      $('#sign-in').hide()
+      $('.show-form').hide()
+      $('.show-in').hide()
+      $('#showPass').show()
+      $('#sign-out').show()
     }
-    setInterval(timeIt, 1000)
-    clearInterval(timeIt)
+  })
+
+  timer.addEventListener('secondsUpdated', function (e) {
+    $('#chronoExample .values').html(timer.getTimeValues().toString())
+  })
+  timer.addEventListener('reset', function (e) {
+    $('#chronoExample .values').html(timer.getTimeValues().toString())
+  })
+  const set = data.workout.sets
+  $('#set-' + set - 1).on('click', function () {
+    console.log('Hey')
   })
   store.workout = data.workout
 }
