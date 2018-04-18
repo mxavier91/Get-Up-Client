@@ -83,7 +83,7 @@ const signOutSuccess = function () {
   $('.show-in').show()
   $('#showPass').hide()
   $('#all-users').hide()
-  $('#setTracker').hide()
+  $('.setTracker').hide()
 }
 
 const signOutFailure = function () {
@@ -93,16 +93,37 @@ const signOutFailure = function () {
 
 const createSuccessful = function (data) {
   console.log(data)
-  $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
-  $('#message').css('background-color', 'green')
+  // $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
+  // $('#message').css('background-color', 'green')
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
   $('#newSetsField').val('')
-  $('#setTracker').show()
   $('#create').hide()
   $('#showAll').hide()
   $('#update').hide()
   $('#all-users').hide()
+  for (let i = 0; i < data.workout.sets; i++) {
+    $('#button').append(`<button class="setTracker" id="set-${i}">Set</button>`)
+    $(`#set-${i}`).on('click')
+  }
+  $('.setTracker').on('click', function () {
+    $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
+    $('#message').css('background-color', 'green')
+    let counter = 0
+    const timeIt = function () {
+      counter++
+      $('#timer').html(counter)
+      if (counter === 10) {
+        $('#message').text('Get back to work, or wait 30 more secs')
+        $('#message').css('background-color', 'green')
+      } else if (counter === 15) {
+        $('#message').text('Time to Work')
+        $('#message').css('background-color', 'green')
+      }
+    }
+    setInterval(timeIt, 1000)
+    clearInterval(timeIt)
+  })
   store.workout = data.workout
 }
 

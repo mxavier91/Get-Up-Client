@@ -26,7 +26,7 @@ const onChangePassword = function (event) {
     .catch(ui.changeFailure)
 }
 
-const onSignOut = function() {
+const onSignOut = function () {
   event.preventDefault()
   const data = getFormFields(this)
   api.signOut(data)
@@ -92,9 +92,13 @@ const onShowAllUsers = function (event) {
 
 const onTrackSet = function (event) {
   event.preventDefault()
+  const data = getFormFields(event.target)
   $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
   $('#message').css('background-color', 'green')
   // $('#message').hide(5000)
+  for (let i = 0; i < data.sets; i++) {
+    $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
+  }
   let counter = 0
   const timeIt = function () {
     counter++
@@ -108,13 +112,6 @@ const onTrackSet = function (event) {
     }
   }
   setInterval(timeIt, 1000)
-}
-
-const onSets = function (event) {
-  const data = getFormFields(event.target)
-  for (let i = 0; i < data.sets; i++) {
-    $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
-  }
 }
 
 // const onAddMovie = function (event) {
@@ -165,8 +162,14 @@ const addHandlers = () => {
   $('a.show-in').on('click', function () {
     $('#sign-in').toggle()
   })
-  $('.setTracker').on('click', onTrackSet)
-  $('.setTracker').on('click', onSets)
+  // $('form').submit(function (event) {
+  //   const num = $(event.target).find('input')
+  //   for (let i = 0; i < num; i++) {
+  //     $('#button').html(`<button>Click Me</button>`)
+  //   }
+  // })
+  // $('.setTracker').on('click', onTrackSet)
+  // $('.setTracker').on('click', onSets)
   // $('#buttonOne').on('click', onTrackSet, function () {
   //   $('#buttonOne').hide()
   // })
