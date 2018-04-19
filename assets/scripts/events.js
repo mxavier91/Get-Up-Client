@@ -47,7 +47,7 @@ const onShowAll = function (event) {
   api.showAllWorkouts()
     .then(ui.showAllWorkoutsSuccess)
   // .catch(ui.showAllMoviesFailed)
-  // $('#content').toggle()
+  $('#content').toggle()
 }
 
 const onUpdateMovie = function (event) {
@@ -92,29 +92,29 @@ const onShowAllUsers = function (event) {
   $('#moreContent').toggle()
 }
 
-const onTrackSet = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
-  $('#message').css('background-color', 'green')
-  // $('#message').hide(5000)
-  for (let i = 0; i < data.sets; i++) {
-    $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
-  }
-  let counter = 0
-  const timeIt = function () {
-    counter++
-    $('#timer').html(counter)
-    if (counter === 10) {
-      $('#message').text('Get back to work, or wait 30 more secs')
-      $('#message').css('background-color', 'green')
-    } else if (counter === 15) {
-      $('#message').text('Time to Work')
-      $('#message').css('background-color', 'green')
-    }
-  }
-  setInterval(timeIt, 1000)
-}
+// const onTrackSet = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
+//   $('#message').css('background-color', 'green')
+//   // $('#message').hide(5000)
+//   for (let i = 0; i < data.sets; i++) {
+//     $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
+//   }
+//   let counter = 0
+//   const timeIt = function () {
+//     counter++
+//     $('#timer').html(counter)
+//     if (counter === 10) {
+//       $('#message').text('Get back to work, or wait 30 more secs')
+//       $('#message').css('background-color', 'green')
+//     } else if (counter === 15) {
+//       $('#message').text('Time to Work')
+//       $('#message').css('background-color', 'green')
+//     }
+//   }
+//   setInterval(timeIt, 1000)
+// }
 
 // const onAddMovie = function (event) {
 //   console.log(event.target)

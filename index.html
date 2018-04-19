@@ -57,7 +57,7 @@
           <button class="resetButton">Reset</button> -->
       </div>
   </div>
-
+<p id="tracker" class="tracker"></p>
   <div id="button" class="button"></div>
 
 
@@ -80,7 +80,7 @@
       <input type="text" name="credentials[username]" required id="username-field" placeholder="Username"><br>
       <input type="text" name="credentials[email]" required id="email-field" placeholder="Email"><br>
       <input type="password" name="credentials[password]" required id="password-field" placeholder="Password"><br>
-      <input type="password" name="credentials[password_confirmation]" required id="password-confirmation-field" placeholder="Password"><br>
+      <input type="password" name="credentials[password_confirmation]" required id="password-confirmation-field" placeholder="Confirm Password"><br>
       <!-- <input type="password" name="credentials[password_confirmation]" required id="password-conformation-field" placeholder="Confirm Password"> -->
     </fieldset>
   </form>
@@ -107,8 +107,8 @@
     <fieldset>
       <legend class="changing">Change Password</legend>
       <input id="passwordField" type="submit" value="Change Password">
-      <input type="password" name="passwords[old]" id="oldPasswordField" placeholder="Old Password">
-      <input type="password" name="passwords[new]" id="newPasswordField" placeholder="New Password">
+      <input type="password" name="passwords[old]" required id="oldPasswordField" placeholder="Old Password">
+      <input type="password" name="passwords[new]" required id="newPasswordField" placeholder="New Password">
     </fieldset>
   </form>
 
@@ -116,11 +116,9 @@
     <fieldset>
       <legend class="creation">Create Workout</legend>
       <input id="createField" type="submit" value="Create"><br>
-      <input type="text" name="workout[exercise]" id="newExerciseField" placeholder="Exercise"><br>
-      <input type="number" name="workout[reps]" id="newRepsField" placeholder="Reps"><br>
-    <form data-id="sets">
-      <input type="number" name="workout[sets]" id="newSetsField" placeholder="Sets"><br>
-    </form>
+      <input type="text" name="workout[exercise]" required id="newExerciseField" placeholder="Exercise"><br>
+      <input type="number" name="workout[reps]" required id="newRepsField" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" required id="newSetsField" placeholder="Sets"><br>
     </fieldset>
   </form>
 
@@ -147,11 +145,11 @@
     <fieldset>
       <legend class="update">Update a Previous Workout</legend>
       <p id="missing"></p>
-      <input id="updateField" type="submit" value="Update Movie"><br>
-      <input type="text" name="workout[id]" id="workout-id-update" placeholder="Workout ID"><br>
-      <input type="text" name="workout[exercise]" id="updateExercise" placeholder="Exercise"><br>
-      <input type="number" name="workout[reps]" id="updateReps" placeholder="Reps"><br>
-      <input type="number" name="workout[sets]" id="updateSets" placeholder="Sets"><br>
+      <input id="updateField" type="submit" value="Update Workout"><br>
+      <input type="text" name="workout[id]" required id="workout-id-update" placeholder="Workout ID"><br>
+      <input type="text" name="workout[exercise]" required id="updateExercise" placeholder="Exercise"><br>
+      <input type="number" name="workout[reps]" required id="updateReps" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" required id="updateSets" placeholder="Sets"><br>
     </fieldset>
   </form>
 
