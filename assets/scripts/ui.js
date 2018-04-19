@@ -41,9 +41,9 @@ const signInSuccess = function (data) {
   $('#signInPassword').val('')
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#create').show()
+  $('#createWorkout').show()
   $('#showAll').show()
-  $('#update').show()
+  $('#updateWorkout').show()
   $('#delete').show()
   $('#all-users').show()
   $('#sign-up').hide()
@@ -52,6 +52,7 @@ const signInSuccess = function (data) {
   $('.show-in').hide()
   $('#showPass').show()
   $('#sign-out').show()
+  welcomeText(data)
   generateMessage('Success on signing in!!!', 'success')
   store.user = data.user
 }
@@ -86,9 +87,9 @@ const signOutSuccess = function () {
   // $('#message').css('background-color', 'green')
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#create').hide()
+  $('#createWorkout').hide()
   $('#showAll').hide()
-  $('#update').hide()
+  $('#updateWorkout').hide()
   $('#delete').hide()
   $('#content').hide()
   $('#moreContent').hide()
@@ -99,6 +100,7 @@ const signOutSuccess = function () {
   $('#showPass').hide()
   $('#all-users').hide()
   $('.resetButton').hide()
+  $('.lede').hide()
   generateMessage('Success on Signing Out!!!', 'success')
 }
 
@@ -244,6 +246,12 @@ const generateMessage = function (messageText, alertType) {
   pageMessage.delay(3000).slideToggle(400, function () {
     $('body').removeClass('hasMessage')
   })
+}
+
+const welcomeText = function (data) {
+  console.log('first name is', data)
+  const newLede = `Welcome ${data.user.first_name}!`
+  $('.lede').text(newLede)
 }
 // const buttonOneSuccess = function () {
 //   $('#buttonOne').hide()

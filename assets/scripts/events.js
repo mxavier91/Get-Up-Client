@@ -164,6 +164,18 @@ const addHandlers = () => {
   $('a.show-in').on('click', function () {
     $('#sign-in').toggle()
   })
+  $('#createWorkout').on('click', () => {
+    $('#create').toggle()
+  })
+  $('#updateWorkout').on('click', () => {
+    $('#update').toggle()
+  })
+  // $('#showUsers').on('click', () => {
+  //   $('#all-users').toggle()
+  // })
+  // $('#previousWorkouts').on('click', () => {
+  //   $('#showAll').toggle()
+  // })
   // $('form').submit(function (event) {
   //   const num = $(event.target).find('input')
   //   for (let i = 0; i < num; i++) {
