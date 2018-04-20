@@ -29,7 +29,7 @@
 
 <h2>Wireframes and User Stories</h2>
 
-Wireframe and User Stories-https://imgur.com/4eBp8MY
+Wireframe and User Stories-
 
 <h2>Things to Add with more Time</h2>
 If I had time, I would add a social aspect to my site. I originally wanted to allow users to see other users, which they can, and I wanted to allow users to add others as friends and like each other workout logs. I had to eventually scrap the idea, because I felt that another feature was more important, and I ran out of time.
