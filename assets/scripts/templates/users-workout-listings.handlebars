@@ -2,22 +2,32 @@
 
 <h1 data-id="{{user.id}}">
   <small>
-    <button type="button" class="link">User:{{user.username}}</button>
+    {{user.username}}
   </small>
 </h1>
 
 {{#each workouts as |workout|}}
 
-<ul>
+<table class="top">
+  <thead>
+    <th class="middle">ID</th>
+    <th class="middle">Weight</th>
+    <th class="middle">Exercise</th>
+    <th class="middle">Reps</th>
+    <th class="middle">Sets</th>
+  </thead>
 {{#if user.id}}
-  <li class="main-title">Exercise: {{workout.exercise}}</li>
-  <li class="id">ID: {{workout.id}}</li>
-  <li class="director">Reps: {{workout.reps}}</li>
-  <li class="actor">Sets: {{workout.sets}}</li>
+<tr>
+  <td class="body">{{workout.id}}</td>
+  <td class="body">{{workout.weight}}</td>
+  <td class="body">{{workout.exercise}}</td>
+  <td class="body">{{workout.reps}}</td>
+  <td class="body">{{workout.sets}}</td>
+</tr>
 {{else}}
   Nothing provided
 {{/if}}<br>
-</ul>
+</table>
 
 {{/each}}
 {{/each}}

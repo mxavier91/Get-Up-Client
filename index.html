@@ -118,6 +118,7 @@
     <fieldset>
       <legend class="creation">Create Workout</legend>
       <input id="createField" type="submit" value="Create"><br>
+      <input type="number" name="workout[weight]" required id="newRepsField" placeholder="Weight"><br>
       <input type="text" name="workout[exercise]" required id="newExerciseField" placeholder="Exercise"><br>
       <input type="number" name="workout[reps]" required id="newRepsField" placeholder="Reps"><br>
       <input type="number" name="workout[sets]" required id="newSetsField" placeholder="Sets"><br>
@@ -139,6 +140,7 @@
       <p id="missing"></p>
       <input id="updateField" type="submit" value="Update Workout"><br>
       <input type="text" name="workout[id]" required id="workout-id-update" placeholder="Workout ID"><br>
+      <input type="number" name="workout[weight]" required id="updateSets" placeholder="Weight"><br>
       <input type="text" name="workout[exercise]" required id="updateExercise" placeholder="Exercise"><br>
       <input type="number" name="workout[reps]" required id="updateReps" placeholder="Reps"><br>
       <input type="number" name="workout[sets]" required id="updateSets" placeholder="Sets"><br>
