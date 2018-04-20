@@ -12,5 +12,4 @@ const authEvents = require('./events')
 
 $(() => {
   authEvents.addHandlers()
-  // heroku.apiUrl()
 })

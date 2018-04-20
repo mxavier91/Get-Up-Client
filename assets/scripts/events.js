@@ -57,20 +57,6 @@ const onUpdateMovie = function (event) {
     .then(ui.updateSuccess)
     .catch(ui.updateFailed)
 }
-/*
-const onDeleteMovie = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  const movie = data.movie
-  if (movie.id.length !== 0) {
-    api.deleteMovie(movie.id)
-      .then(ui.onDeleteSuccess)
-      .catch(ui.onError)
-  } else {
-    console.log('Please provide a movie id!')
-  }
-}
-*/
 
 const onDeleteWorkout = (event) => {
   event.preventDefault()
@@ -91,59 +77,6 @@ const onShowAllUsers = function (event) {
     .catch(ui.allUserFailure)
   $('#moreContent').toggle()
 }
-
-// const onTrackSet = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   $('#message').text('Great Job. If you had a easy time with it, wait 30 seconds. If not wait for a minute')
-//   $('#message').css('background-color', 'green')
-//   // $('#message').hide(5000)
-//   for (let i = 0; i < data.sets; i++) {
-//     $('#button').append(`<button class="setTracker" id="set-${i}">Click me</button>`)
-//   }
-//   let counter = 0
-//   const timeIt = function () {
-//     counter++
-//     $('#timer').html(counter)
-//     if (counter === 10) {
-//       $('#message').text('Get back to work, or wait 30 more secs')
-//       $('#message').css('background-color', 'green')
-//     } else if (counter === 15) {
-//       $('#message').text('Time to Work')
-//       $('#message').css('background-color', 'green')
-//     }
-//   }
-//   setInterval(timeIt, 1000)
-// }
-
-// const onAddMovie = function (event) {
-//   console.log(event.target)
-//   event.preventDefault()
-//   const data = {movie: {title: event.target.dataset.title, director: event.target.dataset.director, actor: event.target.dataset.actor}}
-//   console.log(event.target.dataset)
-//   api.addMovie(data)
-//     .then(ui.joinSuccessful)
-//     // .then(() => onCreate(event))
-//     .catch(ui.joinFailed)
-// }
-
-// const onShowAllUsersMovies = function (event) {
-//   event.preventDefault()
-//   const data = event.target.dataset.id
-//   api.getAllMovies(data)
-//     .then(ui.allMoviesSuccess)
-//     .catch(ui.allMoviesFailure)
-//   console.log(data)
-//   $('#moreContent').toggle()
-// }
-
-// const onCreate = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.createMovie(data)
-//     .then(ui.createSuccessful)
-//     .catch(ui.createFailed)
-// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -170,40 +103,6 @@ const addHandlers = () => {
   $('#updateWorkout').on('click', () => {
     $('#update').toggle()
   })
-  // $('#showUsers').on('click', () => {
-  //   $('#all-users').toggle()
-  // })
-  // $('#previousWorkouts').on('click', () => {
-  //   $('#showAll').toggle()
-  // })
-  // $('form').submit(function (event) {
-  //   const num = $(event.target).find('input')
-  //   for (let i = 0; i < num; i++) {
-  //     $('#button').html(`<button>Click Me</button>`)
-  //   }
-  // })
-  // $('.setTracker').on('click', onTrackSet)
-  // $('.setTracker').on('click', onSets)
-  // $('#buttonOne').on('click', onTrackSet, function () {
-  //   $('#buttonOne').hide()
-  // })
-  // $('#buttonTwo').on('click', onTrackSet, function () {
-  //   $('#buttonTwo').hide()
-  // })
-  // $('#buttonThree').on('click', onTrackSet, function () {
-  //   $('#buttonThree').hide()
-  // })
-  // $('#buttonFour').on('click', onTrackSet, function () {
-  //   $('#buttonFour').hide()
-  // })
-  // $('#buttonFive').on('click', onTrackSet, function () {
-  //   $('#buttonFive').hide()
-  // })
-
-  // $('#moreContent').on('click', '.add-movie', onAddMovie)
-  // $('#movieContent').on('click', '.link', onShowAllUsersMovies)
-  // $('#moreContent').data('key', 'movie')
-  // $('#delete').on('submit', onDeleteMovie)
 }
 
 module.exports = {

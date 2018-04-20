@@ -80,17 +80,6 @@ const updateWorkout = function (data) {
   })
 }
 
-// const deleteWorkout = function (id) {
-//   return $.ajax({
-//     url: config.apiUrl + '/movies/' + id,
-//     method: 'DELETE',
-//     headers: {
-//       ContentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-
 const deleteWorkout = function (id) {
   return $.ajax({
     url: config.apiUrl + '/workouts/' + id,
@@ -112,31 +101,6 @@ const getAllUsers = function (data) {
     }
   })
 }
-//
-// const addMovie = function (data) {
-//   console.log(data)
-//   return $.ajax({
-//     url: config.apiUrl + '/movies',
-//     method: 'POST',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
-
-// const getAllMovies = function (data) {
-//   console.log(data)
-//   return $.ajax({
-//     url: config.apiUrl + '/users',
-//     method: 'GET',
-//     headers: {
-//       contentType: 'application/json'
-//       // Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 
 module.exports = {
   signUp,
@@ -148,6 +112,4 @@ module.exports = {
   updateWorkout,
   deleteWorkout,
   getAllUsers
-  // addMovie,
-  // getAllMovies
 }

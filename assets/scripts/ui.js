@@ -5,8 +5,6 @@ const Timer = require('../../node_modules/easytimer.js/dist/easytimer.min.js')
 const pageMessage = $('#message')
 
 const signUpSuccess = function (data) {
-  // $('#message').text('Sign up Success')
-  // $('#message').css('background-color', 'green')
   $('#email-field').val('')
   $('#password-field').val('')
   $('#password-confirmation-field').val('')
@@ -18,10 +16,7 @@ const signUpSuccess = function (data) {
   generateMessage('Success signing up!!!', 'success')
 }
 
-const signUpFailure = function (error) {
-  console.log(error)
-  // $('#message').text('Sign up Error')
-  // $('#message').css('background-color', 'red')
+const signUpFailure = function () {
   $('#email-field').val('')
   $('#password-field').val('')
   $('#password-confirmation-field').val('')
@@ -35,8 +30,6 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
-  // $('#message').text('Sign In Success')
-  // $('#message').css('background-color', 'green')
   $('#signInEmail').val('')
   $('#signInPassword').val('')
   $('#change-password').hide()
@@ -58,33 +51,24 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (data) {
-  // $('#message').text('Signed in Error')
-  // $('#message').css('background-color', 'yellow')
   generateMessage('Sign in Failed', 'danger ')
   $('#signInEmail').val('')
   $('#signInPassword').val('')
 }
 
 const changeSuccess = function () {
-  // $('#message').text('Changed Password Successfully')
-  // $('#message').css('background-color', 'green')
   $('#oldPasswordField').val('')
   $('#newPasswordField').val('')
   generateMessage('Success on Changing Password!!!', 'success')
 }
 
-const changeFailure = function (error) {
-  console.log(error)
-  // $('#message').text('Error changing password')
-  // $('#message').css('background-color', 'red')
+const changeFailure = function () {
   $('#oldPasswordField').val('')
   $('#newPasswordField').val('')
   generateMessage('Failure Changing Password', 'danger')
 }
 
 const signOutSuccess = function () {
-  // $('#message').text('Signed out Successfully')
-  // $('#message').css('background-color', 'green')
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#createWorkout').hide()
@@ -105,17 +89,11 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function () {
-  // $('#message').text('Signout Error')
-  // $('#message').css('background-color', 'red')
   generateMessage('Failure Signing Out', 'danger')
 }
 
 const createSuccessful = function (data) {
-  // $('#message').text('Created New Workout')
-  // $('#message').css('background-color', 'red')
-  // $('#message').hide(7000)
   generateMessage('Success on Creating New Workout!!!', 'success')
-  console.log(data)
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
   $('#newSetsField').val('')
@@ -178,8 +156,6 @@ const createSuccessful = function (data) {
 }
 
 const createFailed = function (data) {
-  // $('#message').text('Error Creating Workout')
-  // $('#message').css('background-color', 'red')
   generateMessage('Failure to Create', 'danger')
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
@@ -188,28 +164,16 @@ const createFailed = function (data) {
 }
 
 const showAllWorkoutsSuccess = function (data) {
-  console.log(data)
   const showWorkoutsHtml = showWorkouts({workouts: data.workouts})
   $('.content').html(showWorkoutsHtml)
 }
 
 const allUsersSuccess = function (data) {
-  console.log(data)
   const showUsersWorkoutsHtml = showUsersWorkouts({users: data.users})
   $('#moreContent').html(showUsersWorkoutsHtml)
 }
 
-/*
-const showAllMoviesFailed = function (data) {
-  $('#message').text('Hold up one sec')
-  $('#message').css('background-color', 'red')
-}
-*/
-
 const updateSuccess = function (data) {
-  console.log(data)
-  // $('#message').text('Successfully Update')
-  // $('#message').css('background-color', 'green')
   generateMessage('Success on Updating!!!', 'success')
   $('#message').show()
   $('#workout-id-update').val('')
@@ -220,8 +184,6 @@ const updateSuccess = function (data) {
 }
 
 const updateFailed = function (data) {
-  // $('#message').text('Update Failure')
-  // $('#message').css('background-color', 'red')
   generateMessage('Failure to Update!!!', 'danger')
   $('#workout-id-update').val('')
   $('#updateExercise').val('')
@@ -231,15 +193,11 @@ const updateFailed = function (data) {
 }
 
 const deleteSuccessful = function () {
-  // $('#message').text('Delete Successfully')
-  // $('#message').css('background-color', 'green')
   generateMessage('Success Deleting!!!', 'success')
   console.log('deleteSuccessful')
 }
 
 const deleteFailed = function () {
-  // $('#message').text('Hold up one sec, Failed to Delete')
-  // $('#message').css('background-color', 'red')
   generateMessage('Failure to Delete', 'danger')
 }
 
@@ -258,22 +216,6 @@ const welcomeText = function (data) {
   const newLede = `Welcome ${data.user.first_name}!`
   $('.lede').text(newLede)
 }
-// const buttonOneSuccess = function () {
-//   $('#buttonOne').hide()
-// }
-
-// const joinSuccessful = function (data) {
-//   console.log(data)
-//   $('#message').text('"It\'s Alive, It\'s Alive!!!"-New Movie Added')
-//   $('#message').css('background-color', 'green')
-//   store.movie = data.movie
-// }
-//
-// const joinFailed = function (error) {
-//   console.log(error)
-//   $('#message').text('"Argo F@%# Yourself"-Error Adding Movie')
-//   $('#message').css('background-color', 'red')
-// }
 
 module.exports = {
   signUpSuccess,
@@ -292,6 +234,4 @@ module.exports = {
   updateFailed,
   deleteSuccessful,
   deleteFailed
-  // joinSuccessful,
-  // joinFailed
 }
