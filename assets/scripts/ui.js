@@ -184,6 +184,7 @@ const createFailed = function (data) {
   $('#newExerciseField').val('')
   $('#newRepsField').val('')
   $('#newSetsField').val('')
+  $('#newWeightField').val('')
 }
 
 const showAllWorkoutsSuccess = function (data) {
@@ -226,6 +227,7 @@ const updateFailed = function (data) {
   $('#updateExercise').val('')
   $('#updateReps').val('')
   $('#updateSets').val('')
+  $('#updateWeight').val('')
 }
 
 const deleteSuccessful = function () {
