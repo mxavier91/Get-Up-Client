@@ -164,8 +164,12 @@ const createFailed = function (data) {
 }
 
 const showAllWorkoutsSuccess = function (data) {
+  console.log(data.workouts)
   const showWorkoutsHtml = showWorkouts({workouts: data.workouts})
   $('.content').html(showWorkoutsHtml)
+  if (data.workouts.length === 0) {
+    generateMessage('You haven\'t logged any workouts', 'danger')
+  }
 }
 
 const allUsersSuccess = function (data) {
@@ -212,7 +216,6 @@ const generateMessage = function (messageText, alertType) {
 }
 
 const welcomeText = function (data) {
-  console.log('first name is', data)
   const newLede = `Welcome ${data.user.first_name}!`
   $('.lede').text(newLede)
 }
