@@ -43,7 +43,7 @@ User Stories-https://i.imgur.com/kLXprE3.jpg
 ERD-https://i.imgur.com/hdinL39.jpg
 
 <h2>Different Views of the Site</h2>
-![image](/home/malcolm/Pictures/Screenshot from 2018-04-21 16-47-50.png)
+![image](https://imgur.com/RVsMWek)
 
 <h2>Things to Add with more Time</h2>
 If I had time, I would add a social aspect to my site. I originally wanted to allow users to see other users, which they can, and I wanted to allow users to add others as friends and like each other workout logs. I had to eventually scrap the idea, because I felt that another feature was more important, and I ran out of time.
