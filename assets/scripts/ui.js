@@ -164,7 +164,6 @@ const createFailed = function (data) {
 }
 
 const showAllWorkoutsSuccess = function (data) {
-  console.log(data.workouts)
   const showWorkoutsHtml = showWorkouts({workouts: data.workouts})
   $('.content').html(showWorkoutsHtml)
   if (data.workouts.length === 0) {
