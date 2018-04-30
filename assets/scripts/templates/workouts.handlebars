@@ -7,6 +7,7 @@
     <th class="middle">Exercise</th>
     <th class="middle">Reps</th>
     <th class="middle">Sets</th>
+    <th class="middle">Comments</th>
   </thead>
   <tbody>
     {{#if workout.exercise}}
@@ -16,6 +17,7 @@
       <td class="body">{{workout.exercise}}</td>
       <td class="body">{{workout.reps}}</td>
       <td class="body">{{workout.sets}}</td>
+      <td class="body">{{workout.comments}}</td>
     </tr>
     {{else}}
       Nothing provided

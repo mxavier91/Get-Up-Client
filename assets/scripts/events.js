@@ -50,7 +50,7 @@ const onShowAll = function (event) {
   $('#content').toggle()
 }
 
-const onUpdateMovie = function (event) {
+const onUpdateWorkout = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updateWorkout(data)
@@ -85,7 +85,7 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#create').on('submit', onCreate)
   $('#showAll').on('click', onShowAll)
-  $('#update').on('submit', onUpdateMovie)
+  $('#update').on('submit', onUpdateWorkout)
   $('#content').on('click', '.workout-delete', onDeleteWorkout)
   $('#all-users').on('click', onShowAllUsers)
   $('a.show-form').on('click', function () {

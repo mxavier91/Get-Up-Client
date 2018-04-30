@@ -179,12 +179,13 @@ const allUsersSuccess = function (data) {
 
 const updateSuccess = function (data) {
   generateMessage('Success on Updating!!!', 'success')
-  $('#message').show()
   $('#workout-id-update').val('')
   $('#updateExercise').val('')
   $('#updateReps').val('')
   $('#updateSets').val('')
   $('#updateWeight').val('')
+  $('#updateNewComment').val('')
+  $('#update').hide()
 }
 
 const updateFailed = function (data) {
