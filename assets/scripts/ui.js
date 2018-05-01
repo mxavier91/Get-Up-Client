@@ -45,6 +45,8 @@ const signInSuccess = function (data) {
   $('.show-in').hide()
   $('#showPass').show()
   $('#sign-out').show()
+  $('#main-title').hide()
+  $('#sub-title').hide()
   welcomeText(data)
   generateMessage('Success on signing in!!!', 'success')
   store.user = data.user

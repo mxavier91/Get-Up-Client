@@ -2,12 +2,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-image: url('https://i.imgur.com/dBuzU4w.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  background-attachment: fixed;
+  // background-image: url('https://i.imgur.com/dBuzU4w.jpg');
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
+  // background-attachment: fixed;
+  background-color: gray;
   padding-top: 15%;
 }
 
@@ -101,5 +102,17 @@ body {
   display: none;
 }
 
-.navbar-default {
+.main-title{
+  font-size: 80px;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px white;
+}
+
+.sub-title{
+  text-align: center;
+}
+
+.username{
+  color: black;
 }
