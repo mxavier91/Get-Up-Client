@@ -87,6 +87,8 @@ const signOutSuccess = function () {
   $('#all-users').hide()
   $('.resetButton').hide()
   $('.lede').hide()
+  $('#main-title').show()
+  $('#sub-title').show()
   generateMessage('Success on Signing Out!!!', 'success')
 }
 
