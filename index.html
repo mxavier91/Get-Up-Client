@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Capstone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- <h1>Browser Template</h1> -->
+
+
+<p class="lede"></p>
+  <p id="message"></p>
+  <!--Nav Bar Starts-->
+  <nav class="navbar navbar-default navbar-fixed-top the-bar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Get-Up</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="show-form" href="#sign-up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a class="show-in" href="#sign-in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a id="sign-out" href="#sign-out"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+          <li><a id="showPass" class="show-pass" href="#change-password"><span class="glyphicon glyphicon-envelope"></span> Change Password</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Nav Bar Ends-->
+
+
+<h1 id="main-title" class="main-title">Get-Up</h1>
+<h3 id="sub-title" class="sub-title">An app for tracking workouts</h3>
+
+
+<button id="createWorkout" class="btn btn-default createWorkout" type="button">Create a New Workout</button>
+<button id="updateWorkout" class="btn btn-default updateWorkout" type="submit">Update Workout</button>
+<button id="all-users" class="btn btn-default all-users" type="submit">All User</button>
+<button id="showAll" class="btn btn-default showAll" type="submit">Previous Workouts</button>
+
+<div id="content" class="content">
+</div>
+
+
+<div id="moreContent" class="moreContent">
+</div>
+
+  <div id="chronoExample" class="test">
+      <div class="values">00:00:00</div>
+  </div>
+<p id="tracker" class="tracker"></p>
+  <div id="button" class="button"></div>
+
+
+
+  <form id="sign-up" class="border sign-up">
+    <fieldset>
+      <legend class="new-member">Sign up!</legend>
+      <input type="submit" value="Sign up!" id="signUpButton"><br>
+      <input type="text" name="credentials[first_name]" required id="first-name-field" placeholder="First Name"><br>
+      <input type="text" name="credentials[last_name]" required id="last-name-field" placeholder="Last Name"><br>
+      <input type="text" name="credentials[username]" required id="username-field" placeholder="Username"><br>
+      <input type="text" name="credentials[email]" required id="email-field" placeholder="Email"><br>
+      <input type="password" name="credentials[password]" required id="password-field" placeholder="Password"><br>
+      <input type="password" name="credentials[password_confirmation]" required id="password-confirmation-field" placeholder="Confirm Password"><br>
+    </fieldset>
+  </form>
+
+
+  <form id="sign-in" class="border sign-in">
+    <fieldset>
+      <legend class="returning-member">Sign In Here!</legend>
+      <input id="signInField" type="submit" value="Sign in!">
+      <input type="text" name="credentials[email]" required id="signInEmail" placeholder="Email">
+      <input type="password" name="credentials[password]" required id="signInPassword" placeholder="Password">
+    </fieldset>
+  </form>
+
+
+  <form id="sign-out" class="border sign-out">
+    <fieldset>
+      <legend class="leaving">Sign Out</legend>
+      <input type="submit" value="Sign Out">
+    </fieldset>
+  </form>
+
+  <form id="change-password" class="border change-pw">
+    <fieldset>
+      <legend class="changing">Change Password</legend>
+      <input id="passwordField" type="submit" value="Change Password">
+      <input type="password" name="passwords[old]" required id="oldPasswordField" placeholder="Old Password">
+      <input type="password" name="passwords[new]" required id="newPasswordField" placeholder="New Password">
+    </fieldset>
+  </form>
+
+  <form id="create" class="border new-item">
+    <fieldset>
+      <legend class="creation">Create Workout</legend>
+      <input id="createField" type="submit" value="Create"><br>
+      <input type="number" name="workout[weight]" required id="newWeightField" placeholder="Weight"><br>
+      <input type="text" name="workout[exercise]" required id="newExerciseField" placeholder="Exercise"><br>
+      <input type="number" name="workout[reps]" required id="newRepsField" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" required id="newSetsField" placeholder="Sets"><br>
+    </fieldset>
+  </form>
+
+
+  <form id="update" class="border update-workout">
+    <fieldset>
+      <legend class="update">Update a Previous Workout</legend>
+      <p id="missing"></p>
+      <input id="updateField" type="submit" value="Update Workout"><br>
+      <input type="number" name="workout[id]" required id="workout-id-update" placeholder="Workout ID"><br>
+      <input type="number" name="workout[weight]" required  id="updateWeight" placeholder="Weight"><br>
+      <input type="text" name="workout[exercise]" required id="updateExercise" placeholder="Exercise"><br>
+      <input type="number" name="workout[reps]" required id="updateReps" placeholder="Reps"><br>
+      <input type="number" name="workout[sets]" required id="updateSets" placeholder="Sets"><br>
+      <textarea type="text" name="workout[comments]" required id="updateNewComment" placeholder="Comment"></textarea><br>
+    </fieldset>
+  </form>
+
+
+</body>
+
+</html>
